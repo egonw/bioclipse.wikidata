@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.bioclipse.wikidata_feature"
+      label="Wikidata Feature"
+      version="2.6.2.qualifier"
+      provider-name="Bioclipse Team"
+      plugin="net.bioclipse.rdf">
+
+   <description>
+      RDF support for Bioclipse.
+   </description>
+
+   <copyright>
+      Copyright (c) 2015  Egon Willighagen &lt;egonw@users.sf.net>
+Eclipse Public License.
+
+This feature includes the Jena library, which is:
+© Copyright 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Hewlett-Packard Development Company, LP
+   </copyright>
+
+   <license url="http://jena.sourceforge.net/license.html">
+      Bioclipse Wikidata feature license: EPL
+   </license>
+
+   <requires>
+      <import plugin="net.bioclipse.core"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="net.bioclipse.scripting.ui"/>
+      <import plugin="org.eclipse.ui.views" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="slf4j.api"/>
+      <import plugin="org.eclipse.osgi"/>
+   </requires>
+
+   <plugin
+         id="net.bioclipse.wikidata"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
