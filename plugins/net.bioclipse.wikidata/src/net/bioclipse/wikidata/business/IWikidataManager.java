@@ -11,11 +11,21 @@
 package net.bioclipse.wikidata.business;
 
 import net.bioclipse.core.PublishedClass;
+import net.bioclipse.core.PublishedMethod;
+import net.bioclipse.core.Recorded;
+import net.bioclipse.core.business.BioclipseException;
 import net.bioclipse.managers.business.IBioclipseManager;
 
 @PublishedClass(
-    value="TODO: Describe the manager here."
+    value="Manager that add support for interaction with Wikidata."
 )
 public interface IWikidataManager extends IBioclipseManager {
 
+	@Recorded
+    @PublishedMethod(
+    	params="String downloadFolder",
+        methodSummary="Download a Wikidata JSON dump into the given folder."
+    )
+    public String downloadJSON(String downloadFolder) throws BioclipseException;
+	
 }
