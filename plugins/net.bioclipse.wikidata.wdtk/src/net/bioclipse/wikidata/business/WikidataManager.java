@@ -30,17 +30,18 @@ public class WikidataManager implements IBioclipseManager {
      * scripting.
      */
     public String getManagerName() {
-        return "wikidata";
+        return "wdtk";
     }
 
     public String downloadJSON(String downloadFolder, IProgressMonitor monitor) throws BioclipseException {
     	if (monitor == null) monitor = new NullProgressMonitor();
-    	monitor.beginTask("Downloading the JSON dump", 1);
+    	final IProgressMonitor finalMonitor = monitor;
+    	finalMonitor.beginTask("Processing the JSON dump", 1000000);
 
 		logger.debug("Downloading into: " + downloadFolder);
 
     	DumpProcessingController dumpProcessingController = new DumpProcessingController("wikidatawiki");
-    	dumpProcessingController.setOfflineMode(false);
+    	dumpProcessingController.setOfflineMode(true);
     	// create a download folder
     	// TODO: make customizable
     	try {
@@ -55,14 +56,14 @@ public class WikidataManager implements IBioclipseManager {
 				
 				@Override
 				public void processPropertyDocument(PropertyDocument arg0) {
-					// TODO Auto-generated method stub
-					
+					System.out.println(arg0.toString());
+					finalMonitor.worked(1);
 				}
 				
 				@Override
 				public void processItemDocument(ItemDocument arg0) {
-					// TODO Auto-generated method stub
-					
+					System.out.println(arg0.toString());
+					finalMonitor.worked(1);
 				}
 			}, null, true);
 		dumpProcessingController.processMostRecentJsonDump();

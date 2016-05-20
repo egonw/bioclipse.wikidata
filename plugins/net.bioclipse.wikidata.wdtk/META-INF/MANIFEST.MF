@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Wikidata WDTK
+Bundle-SymbolicName: net.bioclipse.wikidata.wdtk;singleton:=true
+Bundle-Version: 2.6.2.qualifier
+Bundle-Activator: net.bioclipse.wikidata.Activator
+Export-Package: net.bioclipse.wikidata, net.bioclipse.wikidata.business
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.bioclipse.core,
+ net.bioclipse.scripting,
+ org.springframework.bundle.spring.aop,
+ net.sf.cglib,
+ org.springframework.osgi.aopalliance.osgi,
+ org.slf4j.api,
+ log4j.over.slf4j,
+ org.apache.commons.compress,
+ org.apache.commons.lang3
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.log4j
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/jackson-core-2.3.3.jar,
+ lib/jackson-databind-2.3.3.jar,
+ lib/jackson-annotations-2.3.3.jar,
+ lib/wdtk-datamodel-0.4.0-SNAPSHOT.jar,
+ lib/wdtk-dumpfiles-0.4.0-SNAPSHOT.jar,
+ lib/wdtk-storage-0.4.0-SNAPSHOT.jar,
+ lib/wdtk-util-0.4.0-SNAPSHOT.jar
